@@ -49,7 +49,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        nextcloud: [stable33, stable34, master]
+        nextcloud: [stable33, stable34, stable35]
     steps:
       - uses: actions/checkout@v5
         with:
