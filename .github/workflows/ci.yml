@@ -1,0 +1,77 @@
+# SPDX-FileCopyrightText: 2026 Lee Soda <dhflyfree03@naver.com>
+# SPDX-License-Identifier: MIT
+
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run build
+
+  php-lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['8.2', '8.3', '8.4']
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+      - run: find appinfo lib -name '*.php' -print0 | xargs -0 -n1 php -l
+
+  nextcloud-enable:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        nextcloud: [stable33, stable34, master]
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+          repository: nextcloud/server
+          ref: ${{ matrix.nextcloud }}
+          submodules: recursive
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+          path: apps/share_via_device
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: ctype,curl,dom,fileinfo,gd,iconv,intl,mbstring,openssl,posix,session,simplexml,sqlite3,pdo_sqlite,xmlreader,xmlwriter,zip,zlib
+          coverage: none
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: apps/share_via_device/package-lock.json
+      - run: npm ci && npm run build
+        working-directory: apps/share_via_device
+      - run: ./occ maintenance:install --database=sqlite --admin-user=admin --admin-pass=admin
+      - run: ./occ app:enable share_via_device
+      - run: ./occ app:check-code share_via_device

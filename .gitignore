@@ -1,0 +1,8 @@
+/node_modules/
+/vendor/
+/js/
+/build/
+/.idea/
+/.vscode/
+*.tar.gz
+*.zip

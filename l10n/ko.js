@@ -1,0 +1,33 @@
+OC.L10N.register(
+	"share_via_device",
+	{
+		"You must be signed in.": "로그인해야 합니다.",
+		"A selected file or folder no longer exists.": "선택한 파일 또는 폴더 중 하나가 더 이상 존재하지 않습니다.",
+		"Could not create all public links. No new links were kept.": "공개 링크를 모두 만들지 못했습니다. 새로 만든 링크는 유지하지 않았습니다.",
+		"Too many links were sent in one internal batch.": "한 번의 내부 처리 묶음에 너무 많은 링크가 전달되었습니다.",
+		"Public link sharing is not available for your account.": "이 계정에서는 공개 링크 공유를 사용할 수 없습니다.",
+		"Your server requires a password for public links. Use Nextcloud’s standard sharing panel.": "서버에서 공개 링크 암호를 요구합니다. Nextcloud 기본 공유 패널을 사용하세요.",
+		"Select at least one file or folder.": "파일 또는 폴더를 하나 이상 선택하세요.",
+		"Too many items were sent in one internal batch.": "한 번의 내부 처리 묶음에 너무 많은 항목이 전달되었습니다.",
+		"A selected path is invalid.": "선택한 경로 중 하나가 올바르지 않습니다.",
+		"You are not allowed to share one of the selected items.": "선택한 항목 중 하나를 공유할 권한이 없습니다.",
+		"Shared from Nextcloud": "Nextcloud에서 공유",
+		"Nextcloud public links": "Nextcloud 공개 링크",
+		"Share via device": "기기로 공유",
+		"The public links are ready. Open the device share sheet or copy all links.": "공개 링크가 준비되었습니다. 기기 공유 창을 열거나 링크를 모두 복사하세요.",
+		"The device share sheet is unavailable. You can copy all public links instead.": "기기 공유 창을 사용할 수 없습니다. 대신 공개 링크를 모두 복사할 수 있습니다.",
+		"Cancel": "취소",
+		"Copy links": "링크 복사",
+		"Public links copied.": "공개 링크를 복사했습니다.",
+		"The links could not be copied.": "링크를 복사하지 못했습니다.",
+		"Share": "공유",
+		"The device share sheet could not be opened. Copy the links instead.": "기기 공유 창을 열지 못했습니다. 대신 링크를 복사하세요.",
+		"Your server requires passwords for public links. Open Nextcloud’s standard Share panel for the selected item.": "서버에서 공개 링크 암호를 요구합니다. 선택 항목의 Nextcloud 기본 공유 패널을 여세요.",
+		"Creating fresh public links for {count} items …": "{count}개 항목의 새 공개 링크를 만드는 중 …",
+		"Sharing was cancelled. The new public links were removed.": "공유를 취소하여 새로 만든 공개 링크를 삭제했습니다.",
+		"Could not prepare the selected items for sharing.": "선택한 항목을 공유할 수 있도록 준비하지 못했습니다.",
+		"Link creation failed and cleanup may be incomplete. Check Nextcloud’s standard Share panel.": "링크 생성에 실패했으며 정리가 완전하지 않을 수 있습니다. Nextcloud 기본 공유 패널에서 확인하세요.",
+		"Sharing was cancelled, but cleanup may be incomplete. Check Nextcloud’s standard Share panel.": "공유를 취소했지만 정리가 완전하지 않을 수 있습니다. Nextcloud 기본 공유 패널에서 확인하세요."
+	},
+	"nplurals=1; plural=0;"
+);
