@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1 - 2026-09-08
+
+### Fixed
+
+- Load the Files integration as a classic browser script so it runs correctly when registered through Nextcloud's `Util::addScript` API.
+
 ## 1.0.0 - 2026-08-27
 
 ### Added

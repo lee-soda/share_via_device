@@ -47,7 +47,7 @@ npm run typecheck
 npm run build
 ```
 
-The built entry point is `js/share-via-device-main.js`.
+The built entry point is `js/share-via-device-main-v101.js`.
 
 ## Packaging
 

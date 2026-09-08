@@ -11,7 +11,7 @@ The available destinations depend on the operating system and installed apps. If
 
 Links follow the server's public-sharing, password, and expiration policies. When public links require a password, use Nextcloud's standard sharing panel.
 	]]></description>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<licence>AGPL-3.0-or-later</licence>
 	<author mail="dhflyfree03@naver.com" homepage="https://github.com/lee-soda">Lee Soda</author>
 	<namespace>ShareViaDevice</namespace>

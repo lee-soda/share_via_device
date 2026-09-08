@@ -1,6 +1,6 @@
 {
   "name": "share_via_device",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create fresh public links for selected Nextcloud files and folders and hand them to the device share sheet.",
   "private": true,
   "type": "module",

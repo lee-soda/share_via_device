@@ -23,6 +23,6 @@ final class LoadFilesScriptListener implements IEventListener {
 		}
 
 		Util::addStyle(Application::APP_ID, 'share-via-device-share_via_device');
-		Util::addScript(Application::APP_ID, 'share-via-device-main');
+		Util::addScript(Application::APP_ID, 'share-via-device-main-v101');
 	}
 }
