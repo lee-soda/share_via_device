@@ -36,11 +36,26 @@ repository URL. Save the returned `share_via_device.crt` beside the private key.
 
 The result is `build/artifacts/share_via_device-v1.0.0.tar.gz`.
 
-## 4. Sign and register
+## 4. Sign the app contents
+
+Extract or stage the release files, then use the `occ` command from a compatible
+Nextcloud server checkout to create `appinfo/signature.json`:
+
+```console
+php /path/to/nextcloud/occ integrity:sign-app \
+  --privateKey=/secure/path/share_via_device.key \
+  --certificate=/secure/path/share_via_device.crt \
+  --path=/path/to/staging/share_via_device
+```
+
+Do not modify the staged application after this step. Recreate the archive from
+the signed staging directory and verify it with `occ integrity:check-app`.
+
+## 5. Sign and register the release
 
 Use the private key and signed certificate to register the app ID in the
-Nextcloud App Store. Sign the exact release archive; rebuilding it changes the
-signature.
+Nextcloud App Store. Sign the exact archive that contains
+`appinfo/signature.json`; rebuilding it changes the release signature.
 
 ```console
 openssl dgst -sha512 -sign share_via_device.key \
